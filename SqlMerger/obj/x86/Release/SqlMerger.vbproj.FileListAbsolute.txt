@@ -1,0 +1,13 @@
+E:\GitHubCode\SqlMerger\SqlMerger\bin\Release\SqlMerger.exe
+E:\GitHubCode\SqlMerger\SqlMerger\bin\Release\SqlMerger.pdb
+E:\GitHubCode\SqlMerger\SqlMerger\bin\Release\SqlMerger.xml
+E:\GitHubCode\SqlMerger\SqlMerger\bin\Release\SunSoftUtility.dll
+E:\GitHubCode\SqlMerger\SqlMerger\bin\Release\SunSoftUtility.pdb
+E:\GitHubCode\SqlMerger\SqlMerger\bin\Release\SunSoftUtility.xml
+E:\GitHubCode\SqlMerger\SqlMerger\obj\x86\Release\ResolveAssemblyReference.cache
+E:\GitHubCode\SqlMerger\SqlMerger\obj\x86\Release\SQL合并工具.Resources.resources
+E:\GitHubCode\SqlMerger\SqlMerger\obj\x86\Release\SQL合并工具.SqlGenerator.resources
+E:\GitHubCode\SqlMerger\SqlMerger\obj\x86\Release\SqlMerger.vbproj.GenerateResource.Cache
+E:\GitHubCode\SqlMerger\SqlMerger\obj\x86\Release\SqlMerger.exe
+E:\GitHubCode\SqlMerger\SqlMerger\obj\x86\Release\SqlMerger.xml
+E:\GitHubCode\SqlMerger\SqlMerger\obj\x86\Release\SqlMerger.pdb

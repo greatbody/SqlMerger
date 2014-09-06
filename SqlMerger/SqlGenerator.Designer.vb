@@ -22,47 +22,86 @@ Partial Class SqlGenerator
     '不要使用代码编辑器修改它。
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.grpEdit = New System.Windows.Forms.GroupBox()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.txtSqlView = New System.Windows.Forms.TextBox()
+        Me.fileList = New System.Windows.Forms.ListBox()
+        Me.grpControl = New System.Windows.Forms.GroupBox()
+        Me.btnCopy = New System.Windows.Forms.Button()
         Me.btnClear = New System.Windows.Forms.Button()
         Me.btnCreate = New System.Windows.Forms.Button()
-        Me.fileList = New System.Windows.Forms.ListBox()
-        Me.txtSqlView = New System.Windows.Forms.TextBox()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.GroupBox1.SuspendLayout()
-        Me.GroupBox2.SuspendLayout()
+        Me.grpEdit.SuspendLayout()
+        Me.grpControl.SuspendLayout()
         Me.SuspendLayout()
         '
-        'GroupBox1
+        'grpEdit
         '
-        Me.GroupBox1.Controls.Add(Me.Label1)
-        Me.GroupBox1.Controls.Add(Me.txtSqlView)
-        Me.GroupBox1.Controls.Add(Me.fileList)
-        Me.GroupBox1.Location = New System.Drawing.Point(8, 77)
-        Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(456, 277)
-        Me.GroupBox1.TabIndex = 0
-        Me.GroupBox1.TabStop = False
-        Me.GroupBox1.Text = "列表区"
+        Me.grpEdit.Controls.Add(Me.Label1)
+        Me.grpEdit.Controls.Add(Me.txtSqlView)
+        Me.grpEdit.Controls.Add(Me.fileList)
+        Me.grpEdit.Location = New System.Drawing.Point(0, 70)
+        Me.grpEdit.Name = "grpEdit"
+        Me.grpEdit.Size = New System.Drawing.Size(813, 377)
+        Me.grpEdit.TabIndex = 0
+        Me.grpEdit.TabStop = False
+        Me.grpEdit.Text = "列表区"
         '
-        'GroupBox2
+        'Label1
         '
-        Me.GroupBox2.Controls.Add(Me.btnClear)
-        Me.GroupBox2.Controls.Add(Me.btnCreate)
-        Me.GroupBox2.Location = New System.Drawing.Point(8, 7)
-        Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(455, 64)
-        Me.GroupBox2.TabIndex = 1
-        Me.GroupBox2.TabStop = False
-        Me.GroupBox2.Text = "合并控制台"
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(191, 17)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(53, 12)
+        Me.Label1.TabIndex = 2
+        Me.Label1.Text = "文件预览"
+        '
+        'txtSqlView
+        '
+        Me.txtSqlView.Location = New System.Drawing.Point(193, 43)
+        Me.txtSqlView.Multiline = True
+        Me.txtSqlView.Name = "txtSqlView"
+        Me.txtSqlView.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
+        Me.txtSqlView.Size = New System.Drawing.Size(608, 322)
+        Me.txtSqlView.TabIndex = 1
+        '
+        'fileList
+        '
+        Me.fileList.AllowDrop = True
+        Me.fileList.FormattingEnabled = True
+        Me.fileList.ItemHeight = 12
+        Me.fileList.Location = New System.Drawing.Point(6, 17)
+        Me.fileList.Name = "fileList"
+        Me.fileList.Size = New System.Drawing.Size(179, 352)
+        Me.fileList.TabIndex = 0
+        '
+        'grpControl
+        '
+        Me.grpControl.Controls.Add(Me.btnCopy)
+        Me.grpControl.Controls.Add(Me.btnClear)
+        Me.grpControl.Controls.Add(Me.btnCreate)
+        Me.grpControl.Location = New System.Drawing.Point(6, 0)
+        Me.grpControl.Name = "grpControl"
+        Me.grpControl.Size = New System.Drawing.Size(359, 64)
+        Me.grpControl.TabIndex = 1
+        Me.grpControl.TabStop = False
+        Me.grpControl.Text = "合并控制台"
+        '
+        'btnCopy
+        '
+        Me.btnCopy.Location = New System.Drawing.Point(195, 22)
+        Me.btnCopy.Name = "btnCopy"
+        Me.btnCopy.Size = New System.Drawing.Size(102, 27)
+        Me.btnCopy.TabIndex = 2
+        Me.btnCopy.Text = "复制到剪贴板"
+        Me.btnCopy.UseVisualStyleBackColor = True
         '
         'btnClear
         '
-        Me.btnClear.Location = New System.Drawing.Point(109, 21)
+        Me.btnClear.Location = New System.Drawing.Point(104, 21)
         Me.btnClear.Name = "btnClear"
-        Me.btnClear.Size = New System.Drawing.Size(85, 27)
+        Me.btnClear.Size = New System.Drawing.Size(85, 28)
         Me.btnClear.TabIndex = 1
-        Me.btnClear.Text = "清除列表"
+        Me.btnClear.Text = "清空列表"
         Me.btnClear.UseVisualStyleBackColor = True
         '
         'btnCreate
@@ -71,57 +110,33 @@ Partial Class SqlGenerator
         Me.btnCreate.Name = "btnCreate"
         Me.btnCreate.Size = New System.Drawing.Size(86, 28)
         Me.btnCreate.TabIndex = 0
-        Me.btnCreate.Text = "开始合并"
+        Me.btnCreate.Text = "合并SQL"
         Me.btnCreate.UseVisualStyleBackColor = True
-        '
-        'fileList
-        '
-        Me.fileList.FormattingEnabled = True
-        Me.fileList.ItemHeight = 12
-        Me.fileList.Location = New System.Drawing.Point(12, 20)
-        Me.fileList.Name = "fileList"
-        Me.fileList.Size = New System.Drawing.Size(182, 244)
-        Me.fileList.TabIndex = 0
-        '
-        'txtSqlView
-        '
-        Me.txtSqlView.Location = New System.Drawing.Point(203, 35)
-        Me.txtSqlView.Multiline = True
-        Me.txtSqlView.Name = "txtSqlView"
-        Me.txtSqlView.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-        Me.txtSqlView.Size = New System.Drawing.Size(240, 228)
-        Me.txtSqlView.TabIndex = 1
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(201, 20)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(53, 12)
-        Me.Label1.TabIndex = 2
-        Me.Label1.Text = "文件预览"
         '
         'SqlGenerator
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(470, 361)
-        Me.Controls.Add(Me.GroupBox2)
-        Me.Controls.Add(Me.GroupBox1)
+        Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.ClientSize = New System.Drawing.Size(813, 447)
+        Me.Controls.Add(Me.grpControl)
+        Me.Controls.Add(Me.grpEdit)
+        Me.MaximizeBox = False
         Me.Name = "SqlGenerator"
         Me.Text = "SQL合并工具"
-        Me.GroupBox1.ResumeLayout(False)
-        Me.GroupBox1.PerformLayout()
-        Me.GroupBox2.ResumeLayout(False)
+        Me.grpEdit.ResumeLayout(False)
+        Me.grpEdit.PerformLayout()
+        Me.grpControl.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
-    Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
-    Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
+    Friend WithEvents grpEdit As System.Windows.Forms.GroupBox
+    Friend WithEvents grpControl As System.Windows.Forms.GroupBox
     Friend WithEvents btnClear As System.Windows.Forms.Button
     Friend WithEvents btnCreate As System.Windows.Forms.Button
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents txtSqlView As System.Windows.Forms.TextBox
     Friend WithEvents fileList As System.Windows.Forms.ListBox
+    Friend WithEvents btnCopy As System.Windows.Forms.Button
 
 End Class
