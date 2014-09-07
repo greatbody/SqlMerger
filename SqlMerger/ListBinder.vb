@@ -176,7 +176,7 @@ Public Class ListBinder
         End If
     End Sub
 
-    Public Function ViewData() As String
+    Private Function ViewData() As String
         If _dicList.Count > 0 Then
             Dim _DataStr As New StringBuilder
             Dim _tmpKey As String = ""
@@ -195,6 +195,10 @@ Public Class ListBinder
     ''' <param name="DestPath">目标路径</param>
     ''' <remarks></remarks>
     Public Function MergeFile(ByVal DestPath As String) As String
+        Return MergeFile(DestPath, False)
+    End Function
+
+    Public Function MergeFile(ByVal DestPath As String, ByVal AutoGo As Boolean) As String
         FillSeqDictionary()
         Dim _mergeBuilder As New StringBuilder
         Dim _mergeStr As String
@@ -202,6 +206,9 @@ Public Class ListBinder
         _mergeBuilder.AppendLine(String.Format("--Created At :{0}", Format(Now, "yyyy-MM-dd hh:mm:ss")))
         _mergeBuilder.AppendLine(String.Format("--Created By :{0}", My.User.Name))
         For i As Integer = 1 To _indexDic.Count
+            If AutoGo Then
+                _mergeBuilder.AppendLine("Go")
+            End If
             _mergeBuilder.AppendLine(ReadFile(_dicList.Item(_indexDic.Item(i)).FilePath))
             _mergeBuilder.AppendLine("")
         Next
@@ -209,4 +216,34 @@ Public Class ListBinder
         WriteToFile(DestPath, _mergeStr)
         Return _mergeStr
     End Function
+
+    Private Sub RemoveAtIndex(ByVal itemIndex As Integer)
+        FillSeqDictionary()
+        Dim keyName As String
+        Dim _tmpFileData As _FileData
+        Dim _count As Integer = 1
+        keyName = _indexDic.Item(itemIndex + 1)
+        _dicList.Remove(keyName)
+        '重新设置SeqID
+        For i As Integer = 1 To _indexDic.Count
+
+            If _dicList.ContainsKey(_indexDic.Item(i)) Then
+                If _dicList.Item(_indexDic.Item(i)).OrderSequency <> _count Then
+                    _tmpFileData = _dicList.Item(_indexDic.Item(i))
+                    _tmpFileData.OrderSequency = _count
+                    _dicList.Item(_indexDic.Item(i)) = _tmpFileData
+                End If
+                _count += 1
+            End If
+        Next
+        If _lstSqlFiles.Items.Count - 1 > itemIndex Then
+            Refresh(itemIndex)
+        Else
+            Refresh()
+        End If
+    End Sub
+
+    Public Sub RemoveSelected()
+        RemoveAtIndex(_lstSqlFiles.SelectedIndex)
+    End Sub
 End Class

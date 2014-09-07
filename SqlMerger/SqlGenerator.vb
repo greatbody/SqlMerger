@@ -13,6 +13,13 @@ Public Class SqlGenerator
         _dSize.Width = 900
         Me.MaximumSize = _dSize
         _listBinder = New ListBinder(fileList)
+        '添加提示信息
+
+        Dim noticeBox As New ToolTip
+        noticeBox.InitialDelay = 100
+        noticeBox.AutoPopDelay = 5000
+        noticeBox.ToolTipTitle = "[操作提示]"
+        noticeBox.SetToolTip(fileList, "D:删除当前项" & vbCrLf & "↑:上移选中项" & vbCrLf & "↓:下移选中项")
     End Sub
 
     Private Sub fileList_DragEnter(ByVal sender As Object, ByVal e As System.Windows.Forms.DragEventArgs) Handles fileList.DragEnter
@@ -24,13 +31,17 @@ Public Class SqlGenerator
         If (e.KeyCode And Keys.Up) = Keys.Up Then
             _listBinder.MoveUp()
             Console.WriteLine("up")
+            e.SuppressKeyPress = True
         End If
         If (e.KeyCode And Keys.Down) = Keys.Down Then
             _listBinder.MoveDown()
             Console.WriteLine("down")
+            e.SuppressKeyPress = True
         End If
-        e.SuppressKeyPress = True
-        txtSqlView.Text = _listBinder.ViewData()
+        If (e.KeyCode And Keys.D) = Keys.D Then
+            _listBinder.RemoveSelected()
+            e.SuppressKeyPress = True
+        End If
     End Sub
 
     Private Sub SqlGenerator_Resize(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Resize
@@ -59,7 +70,8 @@ Public Class SqlGenerator
     End Sub
 
     Private Sub btnCreate_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnCreate.Click
-        txtSqlView.Text = _listBinder.MergeFile("E:\trys.txt")
+        Dim _tmpSqlCode As String = _listBinder.MergeFile("E:\trys.txt", chkAutoGo.Checked)
+        txtSqlView.Text = _tmpSqlCode
     End Sub
 
     Private Sub btnClear_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnClear.Click

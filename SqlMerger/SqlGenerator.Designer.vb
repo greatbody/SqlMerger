@@ -28,18 +28,20 @@ Partial Class SqlGenerator
         Me.txtSqlView = New System.Windows.Forms.TextBox()
         Me.fileList = New System.Windows.Forms.ListBox()
         Me.grpControl = New System.Windows.Forms.GroupBox()
+        Me.btnSelFile = New System.Windows.Forms.Button()
+        Me.Label2 = New System.Windows.Forms.Label()
         Me.txtDestPath = New System.Windows.Forms.TextBox()
         Me.btnCopy = New System.Windows.Forms.Button()
         Me.btnClear = New System.Windows.Forms.Button()
         Me.btnCreate = New System.Windows.Forms.Button()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.btnSelFile = New System.Windows.Forms.Button()
+        Me.chkAutoGo = New System.Windows.Forms.CheckBox()
         Me.grpEdit.SuspendLayout()
         Me.grpControl.SuspendLayout()
         Me.SuspendLayout()
         '
         'grpEdit
         '
+        Me.grpEdit.Controls.Add(Me.chkAutoGo)
         Me.grpEdit.Controls.Add(Me.Label1)
         Me.grpEdit.Controls.Add(Me.txtSqlView)
         Me.grpEdit.Controls.Add(Me.fileList)
@@ -93,6 +95,25 @@ Partial Class SqlGenerator
         Me.grpControl.TabStop = False
         Me.grpControl.Text = "合并控制台"
         '
+        'btnSelFile
+        '
+        Me.btnSelFile.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnSelFile.Location = New System.Drawing.Point(748, 25)
+        Me.btnSelFile.Name = "btnSelFile"
+        Me.btnSelFile.Size = New System.Drawing.Size(36, 21)
+        Me.btnSelFile.TabIndex = 5
+        Me.btnSelFile.Text = "--"
+        Me.btnSelFile.UseVisualStyleBackColor = True
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(263, 31)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(41, 12)
+        Me.Label2.TabIndex = 4
+        Me.Label2.Text = "合并到"
+        '
         'txtDestPath
         '
         Me.txtDestPath.Location = New System.Drawing.Point(310, 26)
@@ -127,24 +148,15 @@ Partial Class SqlGenerator
         Me.btnCreate.Text = "合并SQL"
         Me.btnCreate.UseVisualStyleBackColor = True
         '
-        'Label2
+        'chkAutoGo
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(263, 31)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(41, 12)
-        Me.Label2.TabIndex = 4
-        Me.Label2.Text = "合并到"
-        '
-        'btnSelFile
-        '
-        Me.btnSelFile.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnSelFile.Location = New System.Drawing.Point(748, 25)
-        Me.btnSelFile.Name = "btnSelFile"
-        Me.btnSelFile.Size = New System.Drawing.Size(36, 21)
-        Me.btnSelFile.TabIndex = 5
-        Me.btnSelFile.Text = "--"
-        Me.btnSelFile.UseVisualStyleBackColor = True
+        Me.chkAutoGo.AutoSize = True
+        Me.chkAutoGo.Location = New System.Drawing.Point(256, 19)
+        Me.chkAutoGo.Name = "chkAutoGo"
+        Me.chkAutoGo.Size = New System.Drawing.Size(84, 16)
+        Me.chkAutoGo.TabIndex = 3
+        Me.chkAutoGo.Text = "自动添加Go"
+        Me.chkAutoGo.UseVisualStyleBackColor = True
         '
         'SqlGenerator
         '
@@ -158,6 +170,7 @@ Partial Class SqlGenerator
         Me.MaximizeBox = False
         Me.Name = "SqlGenerator"
         Me.Text = "SQL合并工具"
+        Me.TopMost = True
         Me.grpEdit.ResumeLayout(False)
         Me.grpEdit.PerformLayout()
         Me.grpControl.ResumeLayout(False)
@@ -176,5 +189,6 @@ Partial Class SqlGenerator
     Friend WithEvents txtDestPath As System.Windows.Forms.TextBox
     Friend WithEvents btnSelFile As System.Windows.Forms.Button
     Friend WithEvents Label2 As System.Windows.Forms.Label
+    Friend WithEvents chkAutoGo As System.Windows.Forms.CheckBox
 
 End Class
