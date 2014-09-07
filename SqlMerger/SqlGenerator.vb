@@ -71,4 +71,29 @@ Public Class SqlGenerator
         Clipboard.Clear()
         Clipboard.SetText(_tmpText)
     End Sub
+
+    Private Sub btnSelFile_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnSelFile.Click
+        txtDestPath.Text = SelectFiles("请选择生成文件的存储路径", "sql")
+    End Sub
+
+    Public Shared Function SelectFiles(ByVal Describe As String, Optional ByVal DefaultExt As String = "") As String
+        Dim nOpen As New System.Windows.Forms.SaveFileDialog
+        '不检查文件是否存在
+        nOpen.CheckFileExists = False
+        '检查路径是否存在，并提示
+        nOpen.CheckPathExists = True
+        '设置文件选择对话框的标题
+        nOpen.Title = Describe
+        '如果指定不存在的文件，系统提示是否创建
+        nOpen.CreatePrompt = False
+        nOpen.DefaultExt = DefaultExt
+        nOpen.Filter = "All Files(*.*)|*.*"
+
+        Dim diaResult As DialogResult = nOpen.ShowDialog()
+        If diaResult = DialogResult.OK Then
+            Return nOpen.FileName
+        Else
+            Return Nothing
+        End If
+    End Function
 End Class

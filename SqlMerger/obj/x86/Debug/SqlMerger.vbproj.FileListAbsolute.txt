@@ -10,4 +10,5 @@ E:\GitHubCode\SqlMerger\SqlMerger\obj\x86\Debug\SqlMerger.pdb
 E:\GitHubCode\SqlMerger\SqlMerger\bin\Debug\SunSoftUtility.dll
 E:\GitHubCode\SqlMerger\SqlMerger\bin\Debug\SunSoftUtility.pdb
 E:\GitHubCode\SqlMerger\SqlMerger\bin\Debug\SunSoftUtility.xml
-E:\GitHubCode\SqlMerger\SqlMerger\obj\x86\Debug\SqlMerger.vbproj.GenerateResource.Cache
+E:\GitHubCode\SqlMerger\SqlMerger\obj\x86\Debug\ResGen.read.1.tlog
+E:\GitHubCode\SqlMerger\SqlMerger\obj\x86\Debug\ResGen.write.1.tlog

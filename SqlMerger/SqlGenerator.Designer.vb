@@ -22,14 +22,18 @@ Partial Class SqlGenerator
     '不要使用代码编辑器修改它。
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(SqlGenerator))
         Me.grpEdit = New System.Windows.Forms.GroupBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.txtSqlView = New System.Windows.Forms.TextBox()
         Me.fileList = New System.Windows.Forms.ListBox()
         Me.grpControl = New System.Windows.Forms.GroupBox()
+        Me.txtDestPath = New System.Windows.Forms.TextBox()
         Me.btnCopy = New System.Windows.Forms.Button()
         Me.btnClear = New System.Windows.Forms.Button()
         Me.btnCreate = New System.Windows.Forms.Button()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.btnSelFile = New System.Windows.Forms.Button()
         Me.grpEdit.SuspendLayout()
         Me.grpControl.SuspendLayout()
         Me.SuspendLayout()
@@ -76,30 +80,40 @@ Partial Class SqlGenerator
         '
         'grpControl
         '
+        Me.grpControl.Controls.Add(Me.btnSelFile)
+        Me.grpControl.Controls.Add(Me.Label2)
+        Me.grpControl.Controls.Add(Me.txtDestPath)
         Me.grpControl.Controls.Add(Me.btnCopy)
         Me.grpControl.Controls.Add(Me.btnClear)
         Me.grpControl.Controls.Add(Me.btnCreate)
         Me.grpControl.Location = New System.Drawing.Point(6, 0)
         Me.grpControl.Name = "grpControl"
-        Me.grpControl.Size = New System.Drawing.Size(359, 64)
+        Me.grpControl.Size = New System.Drawing.Size(795, 64)
         Me.grpControl.TabIndex = 1
         Me.grpControl.TabStop = False
         Me.grpControl.Text = "合并控制台"
         '
+        'txtDestPath
+        '
+        Me.txtDestPath.Location = New System.Drawing.Point(310, 26)
+        Me.txtDestPath.Name = "txtDestPath"
+        Me.txtDestPath.Size = New System.Drawing.Size(431, 21)
+        Me.txtDestPath.TabIndex = 3
+        '
         'btnCopy
         '
-        Me.btnCopy.Location = New System.Drawing.Point(195, 22)
+        Me.btnCopy.Location = New System.Drawing.Point(158, 22)
         Me.btnCopy.Name = "btnCopy"
-        Me.btnCopy.Size = New System.Drawing.Size(102, 27)
+        Me.btnCopy.Size = New System.Drawing.Size(93, 27)
         Me.btnCopy.TabIndex = 2
         Me.btnCopy.Text = "复制到剪贴板"
         Me.btnCopy.UseVisualStyleBackColor = True
         '
         'btnClear
         '
-        Me.btnClear.Location = New System.Drawing.Point(104, 21)
+        Me.btnClear.Location = New System.Drawing.Point(82, 21)
         Me.btnClear.Name = "btnClear"
-        Me.btnClear.Size = New System.Drawing.Size(85, 28)
+        Me.btnClear.Size = New System.Drawing.Size(70, 28)
         Me.btnClear.TabIndex = 1
         Me.btnClear.Text = "清空列表"
         Me.btnClear.UseVisualStyleBackColor = True
@@ -108,10 +122,29 @@ Partial Class SqlGenerator
         '
         Me.btnCreate.Location = New System.Drawing.Point(12, 21)
         Me.btnCreate.Name = "btnCreate"
-        Me.btnCreate.Size = New System.Drawing.Size(86, 28)
+        Me.btnCreate.Size = New System.Drawing.Size(64, 28)
         Me.btnCreate.TabIndex = 0
         Me.btnCreate.Text = "合并SQL"
         Me.btnCreate.UseVisualStyleBackColor = True
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(263, 31)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(41, 12)
+        Me.Label2.TabIndex = 4
+        Me.Label2.Text = "合并到"
+        '
+        'btnSelFile
+        '
+        Me.btnSelFile.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnSelFile.Location = New System.Drawing.Point(748, 25)
+        Me.btnSelFile.Name = "btnSelFile"
+        Me.btnSelFile.Size = New System.Drawing.Size(36, 21)
+        Me.btnSelFile.TabIndex = 5
+        Me.btnSelFile.Text = "--"
+        Me.btnSelFile.UseVisualStyleBackColor = True
         '
         'SqlGenerator
         '
@@ -121,12 +154,14 @@ Partial Class SqlGenerator
         Me.ClientSize = New System.Drawing.Size(813, 447)
         Me.Controls.Add(Me.grpControl)
         Me.Controls.Add(Me.grpEdit)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
         Me.Name = "SqlGenerator"
         Me.Text = "SQL合并工具"
         Me.grpEdit.ResumeLayout(False)
         Me.grpEdit.PerformLayout()
         Me.grpControl.ResumeLayout(False)
+        Me.grpControl.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -138,5 +173,8 @@ Partial Class SqlGenerator
     Friend WithEvents txtSqlView As System.Windows.Forms.TextBox
     Friend WithEvents fileList As System.Windows.Forms.ListBox
     Friend WithEvents btnCopy As System.Windows.Forms.Button
+    Friend WithEvents txtDestPath As System.Windows.Forms.TextBox
+    Friend WithEvents btnSelFile As System.Windows.Forms.Button
+    Friend WithEvents Label2 As System.Windows.Forms.Label
 
 End Class
