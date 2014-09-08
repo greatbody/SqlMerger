@@ -108,4 +108,9 @@ Public Class SqlGenerator
             Return Nothing
         End If
     End Function
+
+    Private Sub fileList_Resize(ByVal sender As Object, ByVal e As System.EventArgs) Handles fileList.Resize
+        lblNotice.Left = 10
+        lblNotice.Top = 10
+    End Sub
 End Class

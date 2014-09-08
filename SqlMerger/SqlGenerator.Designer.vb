@@ -24,6 +24,7 @@ Partial Class SqlGenerator
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(SqlGenerator))
         Me.grpEdit = New System.Windows.Forms.GroupBox()
+        Me.chkAutoGo = New System.Windows.Forms.CheckBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.txtSqlView = New System.Windows.Forms.TextBox()
         Me.fileList = New System.Windows.Forms.ListBox()
@@ -34,13 +35,14 @@ Partial Class SqlGenerator
         Me.btnCopy = New System.Windows.Forms.Button()
         Me.btnClear = New System.Windows.Forms.Button()
         Me.btnCreate = New System.Windows.Forms.Button()
-        Me.chkAutoGo = New System.Windows.Forms.CheckBox()
+        Me.lblNotice = New System.Windows.Forms.Label()
         Me.grpEdit.SuspendLayout()
         Me.grpControl.SuspendLayout()
         Me.SuspendLayout()
         '
         'grpEdit
         '
+        Me.grpEdit.Controls.Add(Me.lblNotice)
         Me.grpEdit.Controls.Add(Me.chkAutoGo)
         Me.grpEdit.Controls.Add(Me.Label1)
         Me.grpEdit.Controls.Add(Me.txtSqlView)
@@ -51,6 +53,16 @@ Partial Class SqlGenerator
         Me.grpEdit.TabIndex = 0
         Me.grpEdit.TabStop = False
         Me.grpEdit.Text = "列表区"
+        '
+        'chkAutoGo
+        '
+        Me.chkAutoGo.AutoSize = True
+        Me.chkAutoGo.Location = New System.Drawing.Point(256, 19)
+        Me.chkAutoGo.Name = "chkAutoGo"
+        Me.chkAutoGo.Size = New System.Drawing.Size(84, 16)
+        Me.chkAutoGo.TabIndex = 3
+        Me.chkAutoGo.Text = "自动添加Go"
+        Me.chkAutoGo.UseVisualStyleBackColor = True
         '
         'Label1
         '
@@ -148,15 +160,15 @@ Partial Class SqlGenerator
         Me.btnCreate.Text = "合并SQL"
         Me.btnCreate.UseVisualStyleBackColor = True
         '
-        'chkAutoGo
+        'lblNotice
         '
-        Me.chkAutoGo.AutoSize = True
-        Me.chkAutoGo.Location = New System.Drawing.Point(256, 19)
-        Me.chkAutoGo.Name = "chkAutoGo"
-        Me.chkAutoGo.Size = New System.Drawing.Size(84, 16)
-        Me.chkAutoGo.TabIndex = 3
-        Me.chkAutoGo.Text = "自动添加Go"
-        Me.chkAutoGo.UseVisualStyleBackColor = True
+        Me.lblNotice.AutoSize = True
+        Me.lblNotice.BackColor = System.Drawing.Color.Transparent
+        Me.lblNotice.Location = New System.Drawing.Point(57, 180)
+        Me.lblNotice.Name = "lblNotice"
+        Me.lblNotice.Size = New System.Drawing.Size(77, 12)
+        Me.lblNotice.TabIndex = 4
+        Me.lblNotice.Text = "拖动文件到此"
         '
         'SqlGenerator
         '
@@ -190,5 +202,6 @@ Partial Class SqlGenerator
     Friend WithEvents btnSelFile As System.Windows.Forms.Button
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents chkAutoGo As System.Windows.Forms.CheckBox
+    Friend WithEvents lblNotice As System.Windows.Forms.Label
 
 End Class

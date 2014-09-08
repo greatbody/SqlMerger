@@ -73,6 +73,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ListBinder.vb" />
+    <Compile Include="NoticeBinder.vb" />
     <Compile Include="SqlGenerator.vb">
       <SubType>Form</SubType>
     </Compile>
