@@ -6,7 +6,41 @@ SqlMerger
 </name>
 </assembly>
 <members>
-<member name="P:SQL合并工具.My.Resources.Resources.ResourceManager">
+<member name="M:SQL合并工具.SqlGenerator.btnCreate_Click(System.Object,System.EventArgs)">
+	<summary>
+ 合并SQL【合并SQL】
+ </summary>
+	<param name="sender"></param>
+	<param name="e"></param>
+	<remarks></remarks>
+</member><member name="M:SQL合并工具.SqlGenerator.btnClear_Click(System.Object,System.EventArgs)">
+	<summary>
+ 清空列表【清空列表】
+ </summary>
+	<param name="sender"></param>
+	<param name="e"></param>
+	<remarks></remarks>
+</member><member name="M:SQL合并工具.SqlGenerator.btnCopy_Click(System.Object,System.EventArgs)">
+	<summary>
+ 复制到剪贴板【复制到剪贴板】
+ </summary>
+	<param name="sender"></param>
+	<param name="e"></param>
+	<remarks></remarks>
+</member><member name="M:SQL合并工具.SqlGenerator.btnSelFile_Click(System.Object,System.EventArgs)">
+	<summary>
+ 选择导出路径【--】
+ </summary>
+	<param name="sender"></param>
+	<param name="e"></param>
+	<remarks></remarks>
+</member><member name="M:SQL合并工具.ListBinder.MergeFile(System.String)">
+	<summary>
+ 将列表中的文件合并到一起，输出到指定路径
+ </summary>
+	<param name="DestPath">目标路径</param>
+	<remarks></remarks>
+</member><member name="P:SQL合并工具.My.Resources.Resources.ResourceManager">
 	<summary>
   Returns the cached ResourceManager instance used by this class.
 </summary>
@@ -19,12 +53,6 @@ SqlMerger
 	<summary>
   A strongly-typed resource class, for looking up localized strings, etc.
 </summary>
-</member><member name="M:SQL合并工具.ListBinder.MergeFile(System.String)">
-	<summary>
- 将列表中的文件合并到一起，输出到指定路径
- </summary>
-	<param name="DestPath">目标路径</param>
-	<remarks></remarks>
 </member>
 </members>
 </doc>

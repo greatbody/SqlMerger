@@ -35,14 +35,12 @@ Partial Class SqlGenerator
         Me.btnCopy = New System.Windows.Forms.Button()
         Me.btnClear = New System.Windows.Forms.Button()
         Me.btnCreate = New System.Windows.Forms.Button()
-        Me.lblNotice = New System.Windows.Forms.Label()
         Me.grpEdit.SuspendLayout()
         Me.grpControl.SuspendLayout()
         Me.SuspendLayout()
         '
         'grpEdit
         '
-        Me.grpEdit.Controls.Add(Me.lblNotice)
         Me.grpEdit.Controls.Add(Me.chkAutoGo)
         Me.grpEdit.Controls.Add(Me.Label1)
         Me.grpEdit.Controls.Add(Me.txtSqlView)
@@ -160,16 +158,6 @@ Partial Class SqlGenerator
         Me.btnCreate.Text = "合并SQL"
         Me.btnCreate.UseVisualStyleBackColor = True
         '
-        'lblNotice
-        '
-        Me.lblNotice.AutoSize = True
-        Me.lblNotice.BackColor = System.Drawing.Color.Transparent
-        Me.lblNotice.Location = New System.Drawing.Point(57, 180)
-        Me.lblNotice.Name = "lblNotice"
-        Me.lblNotice.Size = New System.Drawing.Size(77, 12)
-        Me.lblNotice.TabIndex = 4
-        Me.lblNotice.Text = "拖动文件到此"
-        '
         'SqlGenerator
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
@@ -202,6 +190,5 @@ Partial Class SqlGenerator
     Friend WithEvents btnSelFile As System.Windows.Forms.Button
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents chkAutoGo As System.Windows.Forms.CheckBox
-    Friend WithEvents lblNotice As System.Windows.Forms.Label
 
 End Class
