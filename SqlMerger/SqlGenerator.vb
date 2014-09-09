@@ -51,22 +51,7 @@ Public Class SqlGenerator
     Private Sub btnCreate_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnCreate.Click
         Dim _destPath As String = txtDestPath.Text
         Dim _tmpSqlCode As String = ""
-        'If String.IsNullOrEmpty(_destPath) Then
-        '    _destPath = Application.StartupPath & "\" & Format(Now, "yyyy-MM-dd") & "merged.sql"
-        '    If IO.File.Exists(_destPath) Then
-        '        If MsgBox(String.Format("文件：{1}{0}已存在，是否覆盖？", vbCrLf, _destPath), MsgBoxStyle.OkCancel, "文件已存在") = MsgBoxResult.Ok Then
-        '            _tmpSqlCode = _listBinder.MergeFile(_destPath, chkAutoGo.Checked)
-        '        Else
-        '            Exit Sub
-        '        End If
-        '    Else
-        '        _tmpSqlCode = _listBinder.MergeFile(_destPath, chkAutoGo.Checked)
-        '        Exit Sub
-        '    End If
 
-        'Else
-        '    _tmpSqlCode = _listBinder.MergeFile(_destPath, chkAutoGo.Checked)
-        'End If
         If String.IsNullOrEmpty(_destPath) Then
             _destPath = Application.StartupPath & "\" & Format(Now, "yyyy-MM-dd") & "merged.sql"
         End If
@@ -150,7 +135,7 @@ Public Class SqlGenerator
                 Console.WriteLine("down")
                 e.SuppressKeyPress = True
             End If
-            If (e.KeyCode And Keys.D) = Keys.D Then
+            If (e.KeyCode And Keys.D) = Keys.D OrElse (e.KeyCode And Keys.Delete) = Keys.Delete Then
                 _listBinder.RemoveSelected()
                 e.SuppressKeyPress = True
             End If

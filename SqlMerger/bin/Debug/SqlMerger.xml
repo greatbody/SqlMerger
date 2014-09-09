@@ -6,7 +6,20 @@ SqlMerger
 </name>
 </assembly>
 <members>
-<member name="M:SQL合并工具.SqlGenerator.btnCreate_Click(System.Object,System.EventArgs)">
+<member name="P:SQL合并工具.My.Resources.Resources.ResourceManager">
+	<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member><member name="P:SQL合并工具.My.Resources.Resources.Culture">
+	<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member><member name="T:SQL合并工具.My.Resources.Resources">
+	<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member><member name="M:SQL合并工具.SqlGenerator.btnCreate_Click(System.Object,System.EventArgs)">
 	<summary>
  合并SQL【合并SQL】
  </summary>
@@ -40,19 +53,6 @@ SqlMerger
  </summary>
 	<param name="DestPath">目标路径</param>
 	<remarks></remarks>
-</member><member name="P:SQL合并工具.My.Resources.Resources.ResourceManager">
-	<summary>
-  Returns the cached ResourceManager instance used by this class.
-</summary>
-</member><member name="P:SQL合并工具.My.Resources.Resources.Culture">
-	<summary>
-  Overrides the current thread's CurrentUICulture property for all
-  resource lookups using this strongly typed resource class.
-</summary>
-</member><member name="T:SQL合并工具.My.Resources.Resources">
-	<summary>
-  A strongly-typed resource class, for looking up localized strings, etc.
-</summary>
 </member>
 </members>
 </doc>
