@@ -1,4 +1,5 @@
 ﻿Imports System.IO
+Imports SunSoftUtility
 
 Public Class SqlGenerator
     Private _listBinder As ListBinder
@@ -94,6 +95,24 @@ Public Class SqlGenerator
     Private Sub btnSelFile_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnSelFile.Click
         txtDestPath.Text = SelectFiles("请选择生成文件的存储路径", "sql")
     End Sub
+
+    Private Sub fileList_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles fileList.Click
+        ViewCurrent()
+    End Sub
+    ''' <summary>
+    ''' 将列表框中默认选中的文件名对应的文件内容显示在边上的文本框中
+    ''' </summary>
+    ''' <remarks></remarks>
+    Private Sub ViewCurrent()
+        If fileList.Items.Count > 0 Then
+            Dim idStr As String = fileList.SelectedItem.ToString()
+            Dim _filePath As String = _listBinder.Item(idStr)
+            Dim _fileContent As String = TextProcessing.ReadFile(_filePath)
+            txtSqlView.Text = _fileContent
+        Else
+            txtSqlView.Text = ""
+        End If
+    End Sub
     '【文件列表控制】*********************************************************
     '【拖动】
     '【拖动】-【进入】
@@ -121,6 +140,7 @@ Public Class SqlGenerator
                 _remindNotice.Show()
             End If
         End If
+        ViewCurrent()
     End Sub
     '【按键控制】*********************************************************
     Private Sub fileList_KeyDown(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles fileList.KeyDown
@@ -128,19 +148,23 @@ Public Class SqlGenerator
             If (e.KeyCode And Keys.Up) = Keys.Up Then
                 _listBinder.MoveUp()
                 Console.WriteLine("up")
+                ViewCurrent()
                 e.SuppressKeyPress = True
             End If
             If (e.KeyCode And Keys.Down) = Keys.Down Then
                 _listBinder.MoveDown()
                 Console.WriteLine("down")
+                ViewCurrent()
                 e.SuppressKeyPress = True
             End If
             If (e.KeyCode And Keys.D) = Keys.D OrElse (e.KeyCode And Keys.Delete) = Keys.Delete Then
                 _listBinder.RemoveSelected()
+                ViewCurrent()
                 e.SuppressKeyPress = True
             End If
             If fileList.Items.Count = 0 Then
                 _remindNotice.Show()
+                ViewCurrent()
             End If
         End If
     End Sub

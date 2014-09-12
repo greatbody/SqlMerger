@@ -246,4 +246,8 @@ Public Class ListBinder
     Public Sub RemoveSelected()
         RemoveAtIndex(_lstSqlFiles.SelectedIndex)
     End Sub
+
+    Public Function Item(ByVal Key As String) As String
+        Return _dicList.Item(Key).FilePath
+    End Function
 End Class
