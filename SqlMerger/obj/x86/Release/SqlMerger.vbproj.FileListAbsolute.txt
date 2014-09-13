@@ -22,5 +22,4 @@ E:\GitCode\GitHub\SqlMerger\SqlMerger\obj\x86\Release\SqlMerger.vbproj.GenerateR
 E:\GitCode\GitHub\SqlMerger\SqlMerger\obj\x86\Release\SqlMerger.exe
 E:\GitCode\GitHub\SqlMerger\SqlMerger\obj\x86\Release\SqlMerger.xml
 E:\GitCode\GitHub\SqlMerger\SqlMerger\obj\x86\Release\SqlMerger.pdb
-E:\GitHubCode\SqlMerger\SqlMerger\obj\x86\Release\ResGen.read.1.tlog
-E:\GitHubCode\SqlMerger\SqlMerger\obj\x86\Release\ResGen.write.1.tlog
+E:\GitHubCode\SqlMerger\SqlMerger\obj\x86\Release\SqlMerger.vbproj.GenerateResource.Cache
