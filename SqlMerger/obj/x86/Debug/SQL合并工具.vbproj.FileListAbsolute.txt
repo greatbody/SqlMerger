@@ -1,8 +1,0 @@
-C:\Users\SunSoft\AppData\Local\Temporary Projects\SQL合并工具\bin\Debug\SQL合并工具.exe
-C:\Users\SunSoft\AppData\Local\Temporary Projects\SQL合并工具\bin\Debug\SQL合并工具.pdb
-C:\Users\SunSoft\AppData\Local\Temporary Projects\SQL合并工具\bin\Debug\SQL合并工具.xml
-C:\Users\SunSoft\AppData\Local\Temporary Projects\SQL合并工具\obj\x86\Debug\ResolveAssemblyReference.cache
-C:\Users\SunSoft\AppData\Local\Temporary Projects\SQL合并工具\obj\x86\Debug\SQL合并工具.Resources.resources
-C:\Users\SunSoft\AppData\Local\Temporary Projects\SQL合并工具\obj\x86\Debug\SQL合并工具.exe
-C:\Users\SunSoft\AppData\Local\Temporary Projects\SQL合并工具\obj\x86\Debug\SQL合并工具.xml
-C:\Users\SunSoft\AppData\Local\Temporary Projects\SQL合并工具\obj\x86\Debug\SQL合并工具.pdb
