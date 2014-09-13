@@ -99,7 +99,10 @@ Public Class ListBinder
     Public Sub Refresh()
         Refresh(0)
     End Sub
-
+    ''' <summary>
+    ''' 填充序列字典
+    ''' </summary>
+    ''' <remarks></remarks>
     Public Sub FillSeqDictionary()
         _indexDic.Clear()
         If _dicList.Count > 0 Then
@@ -216,7 +219,11 @@ Public Class ListBinder
         WriteToFile(DestPath, _mergeStr)
         Return _mergeStr
     End Function
-
+    ''' <summary>
+    ''' 移除指定序号的项目，从0开始
+    ''' </summary>
+    ''' <param name="itemIndex">项目编号（0开始）</param>
+    ''' <remarks></remarks>
     Private Sub RemoveAtIndex(ByVal itemIndex As Integer)
         FillSeqDictionary()
         Dim keyName As String
@@ -236,17 +243,26 @@ Public Class ListBinder
                 _count += 1
             End If
         Next
-        If _lstSqlFiles.Items.Count - 1 > itemIndex Then
-            Refresh(itemIndex)
+        If _dicList.Count = itemIndex Then
+            Refresh(itemIndex - 1)
         Else
-            Refresh()
+            Refresh(itemIndex)
         End If
     End Sub
-
+    ''' <summary>
+    ''' 移除当前选中的一项
+    ''' </summary>
+    ''' <remarks></remarks>
     Public Sub RemoveSelected()
+        '
         RemoveAtIndex(_lstSqlFiles.SelectedIndex)
     End Sub
-
+    ''' <summary>
+    ''' 获取指定文件名对应的文件路径
+    ''' </summary>
+    ''' <param name="Key">文件名</param>
+    ''' <returns></returns>
+    ''' <remarks></remarks>
     Public Function Item(ByVal Key As String) As String
         Return _dicList.Item(Key).FilePath
     End Function

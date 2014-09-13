@@ -145,13 +145,13 @@ Public Class SqlGenerator
     '【按键控制】*********************************************************
     Private Sub fileList_KeyDown(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles fileList.KeyDown
         If fileList.Items.Count > 0 Then
-            If (e.KeyCode And Keys.Up) = Keys.Up Then
+            If e.KeyCode = Keys.Up Then
                 _listBinder.MoveUp()
                 Console.WriteLine("up")
                 ViewCurrent()
                 e.SuppressKeyPress = True
             End If
-            If (e.KeyCode And Keys.Down) = Keys.Down Then
+            If e.KeyCode = Keys.Down Then
                 _listBinder.MoveDown()
                 Console.WriteLine("down")
                 ViewCurrent()
