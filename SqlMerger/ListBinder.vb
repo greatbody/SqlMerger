@@ -206,7 +206,7 @@ Public Class ListBinder
         Dim _mergeBuilder As New StringBuilder
         Dim _mergeStr As String
         _mergeBuilder.AppendLine("--copy right sunsoft")
-        _mergeBuilder.AppendLine(String.Format("--Created At :{0}", Format(Now, "yyyy-MM-dd hh:mm:ss")))
+        _mergeBuilder.AppendLine(String.Format("--Created At :{0}", Format(Now, "yyyy-MM-dd HH:mm:ss")))
         _mergeBuilder.AppendLine(String.Format("--Created By :{0}", My.User.Name))
         For i As Integer = 1 To _indexDic.Count
             If AutoGo Then
